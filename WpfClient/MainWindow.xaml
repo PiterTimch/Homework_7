@@ -5,12 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="Beige">
+        Title="MainWindow" Height="450" Width="500" Background="#FF001F4A" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="FontFamily" Value="DejaVu Sans"></Setter>
+            <Setter Property="Foreground" Value="#FFE7E8FF"></Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="Title">
+            <Setter Property="FontSize" Value="58"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="FontFamily" Value="Nachlieli CLM BoldOblique"></Setter>
+            <Setter Property="Foreground" Value="#FFE7E8FF"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="Padding" Value="3"></Setter>
+            <Setter Property="FontFamily" Value="DejaVu Sans"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="Foreground" Value="#FFE7E8FF"></Setter>
+            <Setter Property="Background" Value="#FF00003F"></Setter>
+            <Setter Property="BorderBrush" Value="#FF6365A0"></Setter>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="DejaVu Sans"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="Margin" Value="10"></Setter>
+            <Setter Property="Width" Value="150"></Setter>
+            <Setter Property="Padding" Value="12"></Setter>
+            <Setter Property="Foreground" Value="#FFE7E8FF"></Setter>
+            <Setter Property="Background" Value="#FF00003F"></Setter>
+            <Setter Property="BorderBrush" Value="#FF6365A0"></Setter>
+        </Style>
+        <Style TargetType="StackPanel">
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <StackPanel Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource Title}">SMS SENDER</TextBlock>
+        
+        <StackPanel Grid.Row="1">
             <TextBlock>Введіть телефон кому надсилати SMS:</TextBlock>
             <TextBox x:Name="recipientTB"></TextBox>
-            <TextBlock>Введіть повідомлення</TextBlock>
+            <TextBlock>Введіть повідомлення:</TextBlock>
             <TextBox x:Name="textTB"></TextBox>
 
             <Button x:Name="sendBT" Click="sendBT_Click">Надіслати</Button>
