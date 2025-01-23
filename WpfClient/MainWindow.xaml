@@ -53,7 +53,8 @@
         <TextBlock Style="{StaticResource Title}">SMS SENDER</TextBlock>
         
         <StackPanel Grid.Row="1">
-            <TextBlock>Введіть телефон кому надсилати SMS:</TextBlock>
+            <TextBlock>Введіть телефон отримувача</TextBlock>
+            <TextBlock>(380xxxxxxxxx):</TextBlock>
             <TextBox x:Name="recipientTB"></TextBox>
             <TextBlock>Введіть повідомлення:</TextBlock>
             <TextBox x:Name="textTB"></TextBox>
